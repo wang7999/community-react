@@ -1,19 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-// import '~antd/dist/antd.css';
-import '@ant-design/pro-components/dist/components.css';
-// import 'antd/dist/antd.css';
-
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './index.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { store } from './app/stores';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const container = document.getElementById('root')!;
+const root = createRoot(container);
+
 root.render(
   // <React.StrictMode>
-    <App />,
+    <Provider store={store}>
+      <App />
+      <ToastContainer position='top-center' autoClose={2000} />
+    </Provider>
   // </React.StrictMode>
 );
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import { MRouter } from './router';
+import { AppRoutes } from './app/router/AppRoutes';
+import './app/styles/style.scss';
 
 function App() {
   return (
-    <MRouter></MRouter>
+    <AppRoutes />
   );
 }
 
